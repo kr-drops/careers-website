@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Careers Site</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      #banner {
+        height: 360px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "navbar.html" %}
+    <img class="img-fluid" id="banner" src="static\banner.jpg" height="320" />
+
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">Careers Site</h1>
+
+      <div class="row" style="margin-bottom: 16px;">
+        <div class="col-md-6">
+          <p class="lead">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+          <img
+            src="static/working.jpg"
+            class="img-fluid w-100"
+            style="max-height: 280px; object-fit: cover; border-radius: 4px"
+          />
+        </div>
+      </div>
+      <h2 class="text-center mt-2 mb-4">Job Openings</h2>
+      <div>
+        {% for job in jobs %}
+        {% include 'jobitems.html' %}
+        {% endfor %}
+      </div>
+      <div class="text-center">
+        <a
+          href="mailto:careers.site.contact@gmail.com?subject=Queries%20upon%20job%20openings&body=My%20Name%3A%20%3CYour%20Name%3E%0D%0AJob%20ID%20%2F%20Name%3A%20%3CSelected%20job%20name%20or%20ID%3E%0D%0AYour%20Question%3A%20%3CYour%20question%20here%3E"
+          class="btn btn-primary btn-lg"
+          >Contact Us</a
+        >
+      </div>
+    </div>
+    {% include "footer.html" %}
+  </body>
+</html>
