@@ -26,7 +26,7 @@
     <div class="container">
       <h1 class="text-center mt-2 mb-4">Careers Site</h1>
 
-      <div class="row" style="margin-bottom: 16px">
+      <div class="row" style="margin-bottom: 16px;">
         <div class="col-md-6">
           <p class="lead">
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -49,9 +49,17 @@
         </div>
       </div>
       <h2 class="text-center mt-2 mb-4">Job Openings</h2>
-      <p>TODO-- Show the job here</p>
+      <div>
+        {% for job in jobs %}
+        {% include 'jobitems.html' %}
+        {% endfor %}
+      </div>
       <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
+        <a
+          href="mailto:careers.site.contact@gmail.com?subject=Queries%20upon%20job%20openings&body=My%20Name%3A%20%3CYour%20Name%3E%0D%0AJob%20ID%20%2F%20Name%3A%20%3CSelected%20job%20name%20or%20ID%3E%0D%0AYour%20Question%3A%20%3CYour%20question%20here%3E"
+          class="btn btn-primary btn-lg"
+          >Contact Us</a
+        >
       </div>
     </div>
     {% include "footer.html" %}
