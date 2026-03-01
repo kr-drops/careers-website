@@ -18,10 +18,7 @@ with engine.connect() as conn:
 
 
 
-with engine.connect() as conn:
-    result = conn.execute(text("SELECT * FROM JOBS"))
-    for row in result:
-        print(row)
+
 
 def load_jobs():
     with engine.connect() as conn:
